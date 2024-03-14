@@ -1,0 +1,73 @@
+.wrapper {
+  flex: 1;
+  img {
+    height: 380px;
+    object-fit: contain;
+  }
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 31px;
+}
+
+.text {
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 21px;
+}
+
+.image {
+  margin-bottom: 21px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 39px;
+}
+
+.custom {
+  margin-bottom: 21px;
+
+  p:empty::before {
+    // for Draft instead br
+    content: '\00a0'; /* добавляем неразрывный пробел */
+    display: block; /* Сделать пустой элемент видимым блочным элементом */
+  }
+
+  p {
+    margin: 16px 0;
+  }
+
+  ol,
+  ul {
+    margin-left: 24px;
+    li {
+      margin: 16px 0;
+    }
+  }
+
+  ol ol {
+    list-style-type: lower-alpha; /* Буквенные маркеры для вложенного ol */
+    margin-left: 25px;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 16px;
+  row-gap: 8px;
+  margin-bottom: 21px;
+}

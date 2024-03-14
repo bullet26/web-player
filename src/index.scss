@@ -1,0 +1,19 @@
+@import './styles/font';
+@import './styles/skip';
+@import './styles/overwrites_ant';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Futura PT', sans-serif;
+}
+
+div {
+  user-select: none;
+}
+
+#root {
+  width: 95vw;
+  margin: 0 auto;
+}
