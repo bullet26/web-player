@@ -1,0 +1,70 @@
+@import '../theme/variables.scss';
+
+.skip {
+  width: fit-content;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  column-gap: 4px;
+  height: 32px;
+
+  .rectangle,
+  input {
+    display: inline-block;
+    border: 1px solid lightgrey;
+    border-radius: 6px;
+    height: 32px;
+  }
+  .rectangle {
+    width: 104px;
+  }
+
+  input {
+    padding: 2px 5px;
+    min-width: 104px;
+    &:focus,
+    &:focus-visible {
+      outline: none;
+      border-color: $main;
+    }
+  }
+
+  select {
+    border: 1px solid lightgrey;
+    border-radius: 6px;
+    min-width: 104px;
+    height: 32px;
+  }
+
+  .line {
+    display: inline-block;
+    width: 38px;
+    border-bottom: 3px solid $accent;
+  }
+}
+
+.circle {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  background-color: #d5e8ff;
+  color: $accent;
+}
+
+.circleSmall {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  background-color: #d5e8ff;
+  color: $accent;
+}
