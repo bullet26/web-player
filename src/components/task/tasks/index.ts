@@ -1,2 +1,5 @@
 export { CompareTask } from './compare-task'
 export { CategorizeTask } from './categorize-task'
+export { SplitSentenceTask } from './split-sentence-task'
+export { AnswerFromSelectTask } from './select-task'
+export { RightAnswerTask } from './right-answer-task'

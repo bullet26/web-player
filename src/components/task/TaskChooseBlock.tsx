@@ -2,7 +2,13 @@
 import { FC, useEffect } from 'react'
 import { Type, TaskType } from 'types'
 import { preparedTaskData, useTaskContext } from 'components/task/utils'
-import { CompareTask, CategorizeTask } from 'components/task/tasks'
+import {
+  CompareTask,
+  CategorizeTask,
+  SplitSentenceTask,
+  AnswerFromSelectTask,
+  RightAnswerTask,
+} from 'components/task/tasks'
 
 interface TaskChooseBlockProps {
   type: Type
@@ -30,6 +36,9 @@ export const TaskChooseBlock: FC<TaskChooseBlockProps> = (props) => {
     <div>
       {type === 'compareTask' && <CompareTask onRepeat={onRepeatTask} />}
       {type === 'categorizeTask' && <CategorizeTask onRepeat={onRepeatTask} />}
+      {type === 'orderSplitSentence' && <SplitSentenceTask onRepeat={onRepeatTask} />}
+      {type === 'answerFromSelect' && <AnswerFromSelectTask onRepeat={onRepeatTask} />}
+      {type === 'rightAnswerTask' && <RightAnswerTask onRepeat={onRepeatTask} />}
     </div>
   )
 }
