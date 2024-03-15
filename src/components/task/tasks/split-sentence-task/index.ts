@@ -1,0 +1,1 @@
+export { SplitSentenceTask } from './SplitSentenceTask'

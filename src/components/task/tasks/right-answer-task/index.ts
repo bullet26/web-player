@@ -1,0 +1,1 @@
+export { RightAnswerTask } from './RightAnswerTask'

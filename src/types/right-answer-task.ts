@@ -23,3 +23,16 @@ export interface RightAnswerTask {
   taskText: RightAnswerTaskText[]
   parameters: string[]
 }
+
+export interface PreparedAnswerFromSelectTask {
+  taskHTMLContent: string | TrustedHTML
+  taskCorrectAnswerIDs: { [x: string]: string }
+  chosenAnswerIDs: { [x: string]: string }
+}
+
+export interface PreparedRightAnswerTask {
+  taskQuestion: string | TrustedHTML
+  taskAnswers: RightAnswerTaskAnswer[]
+  taskCorrectAnswerIDs: { [x: string]: string }
+  chosenAnswerIDs: { [x: string]: string }
+}

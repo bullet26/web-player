@@ -19,10 +19,10 @@ export const CategorizeTask: FC<CategorizeTaskProps> = (props) => {
 
   const [data, setCurrentData] = useState(getData(difficultyLevel) as PreparedCategorizeTask)
   const [disableBtn, setDisableBtnStatus] = useState(true)
-  const [showBtn, setShowBtnStatus] = useState(true)
+  const [isTaskNotFinished, setTaskNotFinishStatus] = useState(true)
   const [validateText, setValidateText] = useState('')
-  const [validationArray, setValidation] = useState<string[]>([])
-  const [statusCheck, setStatus] = useState(true)
+  const [validationArray, setValidationArray] = useState<string[]>([])
+  const [statusValidation, setValidationStatus] = useState(true)
 
   useEffect(() => {
     setCurrentData(getData(difficultyLevel) as PreparedCategorizeTask)
@@ -70,7 +70,7 @@ export const CategorizeTask: FC<CategorizeTaskProps> = (props) => {
     word: string,
     groupNumber: number | null,
   ) => {
-    if (!showBtn || !index || !itemID) {
+    if (!isTaskNotFinished || !index || !itemID) {
       return
     }
 
@@ -89,19 +89,19 @@ export const CategorizeTask: FC<CategorizeTaskProps> = (props) => {
   }
 
   const styleItemWord = (id: string) =>
-    showBtn ? {} : getColorText(withCheck, validationArray, id)
+    isTaskNotFinished ? {} : getColorText(withCheck, validationArray, id)
 
   const onSubmitTask = () => {
     const { status, validation } = onValidateTask(data)
     const text = onValidText(status, withCheck)
     !!data && setData(data, difficultyLevel)
-    setStatus(status)
-    setValidation(validation)
+    setValidationStatus(status)
+    setValidationArray(validation)
     setValidateText(text)
-    setShowBtnStatus(false)
+    setTaskNotFinishStatus(false)
   }
   const onRepeatTask = () => {
-    setShowBtnStatus(true)
+    setTaskNotFinishStatus(true)
     onRepeat()
   }
 
@@ -134,9 +134,9 @@ export const CategorizeTask: FC<CategorizeTaskProps> = (props) => {
         </div>
       )}
       <ButtonBlock
-        showBtn={showBtn}
+        showBtn={isTaskNotFinished}
         disableBtn={disableBtn}
-        statusCheck={statusCheck}
+        statusCheck={statusValidation}
         validateText={validateText}
         onSubmitTask={onSubmitTask}
         onRepeatTask={onRepeatTask}

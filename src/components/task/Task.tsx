@@ -65,7 +65,11 @@ export const Task: FC<TaskProps> = (props) => {
             </div>
             <div className={s.subtitle}>{data?.description}</div>
           </div>
-          {!isOneDifficultyLevel && (
+          {isOneDifficultyLevel ? (
+            <div className={s.taskOneLevelWrapper}>
+              <TaskChooseBlock type={type} data={data} />
+            </div>
+          ) : (
             <DifficultyLevelTab childrenOption={<TaskChooseBlock type={type} data={data} />} />
           )}
         </div>

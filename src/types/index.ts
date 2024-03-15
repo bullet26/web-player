@@ -17,9 +17,15 @@ export {
   type RightAnswerTaskAnswer,
   type RightAnswerTaskText,
   type RightAnswerTask,
+  type PreparedAnswerFromSelectTask,
+  type PreparedRightAnswerTask,
 } from './right-answer-task'
 
-export { type TaskTextWithoutAnswer, type TaskWithoutAnswer } from './answer-from-select-task'
+export {
+  type TaskTextWithoutAnswer,
+  type TaskWithoutAnswer,
+  type PreparedSplitSentenceTask,
+} from './split-sentence-task'
 
 export {
   type CompareTaskWordPair,

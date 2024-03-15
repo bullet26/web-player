@@ -5,3 +5,9 @@ export type TaskTextWithoutAnswer = Omit<RightAnswerTaskText, 'taskAnswers'>
 export interface TaskWithoutAnswer extends Omit<RightAnswerTask, 'taskText'> {
   taskText: TaskTextWithoutAnswer[]
 }
+
+export interface PreparedSplitSentenceTask {
+  correctOrderSentence: string[]
+  initialSentence: string[]
+  compareSentence: string[]
+}

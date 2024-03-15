@@ -19,11 +19,11 @@ export const CompareTask: FC<CompareTaskProps> = (props) => {
   const { onRepeat } = props
 
   const [data, setCurrentData] = useState(getData(difficultyLevel) as PreparedCompareTask)
-  const [showBtn, setShowBtnStatus] = useState(true)
+  const [isTaskNotFinished, setTaskNotFinishStatus] = useState(true)
   const [disableBtn, setDisableBtnStatus] = useState(true)
   const [validateText, setValidateText] = useState('')
-  const [validationArray, setValidation] = useState<string[]>([])
-  const [statusCheck, setStatus] = useState(true)
+  const [validationArray, setValidationArray] = useState<string[]>([])
+  const [statusValidation, setValidationStatus] = useState(true)
 
   useEffect(() => {
     setCurrentData(getData(difficultyLevel) as PreparedCompareTask)
@@ -65,7 +65,7 @@ export const CompareTask: FC<CompareTaskProps> = (props) => {
   const onClickDropCell = (index: number, word?: string) => {
     const id = data?.comparedRightWords[index].id
 
-    if (!showBtn || !word || !id) {
+    if (!isTaskNotFinished || !word || !id) {
       return
     }
 
@@ -83,14 +83,14 @@ export const CompareTask: FC<CompareTaskProps> = (props) => {
     const { status, validation } = onValidateTask(data)
     const text = onValidText(status, withCheck)
     !!data && setData(data, difficultyLevel)
-    setStatus(status)
-    setValidation(validation)
+    setValidationStatus(status)
+    setValidationArray(validation)
     setValidateText(text)
-    setShowBtnStatus(false)
+    setTaskNotFinishStatus(false)
   }
 
   const onRepeatTask = () => {
-    setShowBtnStatus(true)
+    setTaskNotFinishStatus(true)
     onRepeat()
   }
 
@@ -104,7 +104,7 @@ export const CompareTask: FC<CompareTaskProps> = (props) => {
             index={i}
             dragType={dragType}
             word={data?.comparedRightWords[i.toString()]?.word}
-            style={showBtn ? {} : getColorCell(withCheck, validationArray, item.id)}
+            style={isTaskNotFinished ? {} : getColorCell(withCheck, validationArray, item.id)}
             onClickCell={onClickDropCell}
           />
         </div>
@@ -117,9 +117,9 @@ export const CompareTask: FC<CompareTaskProps> = (props) => {
         </div>
       )}
       <ButtonBlock
-        showBtn={showBtn}
+        showBtn={isTaskNotFinished}
         disableBtn={disableBtn}
-        statusCheck={statusCheck}
+        statusCheck={statusValidation}
         validateText={validateText}
         onSubmitTask={onSubmitTask}
         onRepeatTask={onRepeatTask}
