@@ -23,7 +23,7 @@ const $request = ky.create({
 
 export const getBlocks = async (state: string = ''): Promise<LessonType> => {
   try {
-    const res: LessonType = await $request.get(`lesson/${state}`).json()
+    const res: LessonType = await $request.get(`lessons/${state}`).json()
     return res
   } catch (error: any) {
     if (error?.name === 'HTTPError') {

@@ -1,6 +1,5 @@
 import { CSSProperties, FC } from 'react'
 import { useDrop } from 'react-dnd'
-import { OtherWordItem } from 'types'
 import s from '../CategorizeTaskView.module.scss'
 
 interface DropCellItemProps {

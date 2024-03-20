@@ -53,3 +53,42 @@ export const getColorBorder = (withCheck: boolean, validationArray: string[], it
 
   return style
 }
+
+export const getColorBorderInString = (
+  withCheck: boolean,
+  validationArray: string[],
+  itemId: string,
+  format: 'all' | 'bottom' = 'all',
+  status: boolean = true,
+) => {
+  let color = ''
+
+  if (!withCheck) {
+    color = '#FFCC00'
+  } else if ((withCheck && validationArray.includes(itemId)) || (withCheck && !status)) {
+    color = '#EC2028'
+  } else if (withCheck) {
+    color = '#00F418'
+  }
+
+  return format === 'bottom' ? `border-bottom: 1px solid ${color}` : `border: 1px solid ${color}`
+}
+
+export const getColorCircle = (
+  withCheck: boolean,
+  validationArray: string[],
+  itemId: string,
+  status: boolean = true,
+) => {
+  let style = ''
+
+  if (!withCheck) {
+    style = 'background: #FDF8E6; color: #FFCC00'
+  } else if ((withCheck && validationArray.includes(itemId)) || (withCheck && !status)) {
+    style = 'background: #FEE8E9; color: #EC2028'
+  } else if (withCheck) {
+    style = 'background: #ECFFEE; color: #00F418'
+  }
+
+  return style
+}

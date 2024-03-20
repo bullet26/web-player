@@ -35,4 +35,14 @@ export interface PreparedRightAnswerTask {
   taskAnswers: RightAnswerTaskAnswer[]
   taskCorrectAnswerIDs: { [x: string]: string }
   chosenAnswerIDs: { [x: string]: string }
+  chosenWords: string[]
+}
+
+export interface PreparedOnlyOneRightAnswerTask {
+  taskQuestion: string | TrustedHTML
+  taskAnswers: RightAnswerTaskAnswer[]
+  formattedAnswers: RightAnswerTaskItem[]
+  taskCorrectAnswerID: string
+  chosenAnswerID: string
+  chosenWords: string[]
 }

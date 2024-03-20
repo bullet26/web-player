@@ -6,7 +6,13 @@ export const preparedRightAnswerTask = (
   randomPlacement: boolean,
 ): PreparedRightAnswerTask => {
   if (!task || !Object.hasOwn(task, 'taskQuestion') || !Object.hasOwn(task, 'taskAnswers')) {
-    return { taskQuestion: '', taskAnswers: [], taskCorrectAnswerIDs: {}, chosenAnswerIDs: {} }
+    return {
+      taskQuestion: '',
+      taskAnswers: [],
+      taskCorrectAnswerIDs: {},
+      chosenAnswerIDs: {},
+      chosenWords: [],
+    }
   }
 
   const data = task as RightAnswerTaskText
@@ -30,5 +36,7 @@ export const preparedRightAnswerTask = (
     taskCorrectAnswerIDs[item.id] = correctAnswerID
   })
 
-  return { taskQuestion, taskAnswers, taskCorrectAnswerIDs, chosenAnswerIDs: {} }
+  const chosenWords = new Array(taskAnswers.length)
+
+  return { taskQuestion, taskAnswers, taskCorrectAnswerIDs, chosenAnswerIDs: {}, chosenWords }
 }

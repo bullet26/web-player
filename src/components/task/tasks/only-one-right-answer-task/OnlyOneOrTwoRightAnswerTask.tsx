@@ -3,23 +3,25 @@
 import { FC, useEffect, useState, useRef } from 'react'
 import { Button } from 'antd'
 import classNames from 'classnames'
-import { PreparedRightAnswerTask } from 'types'
+import { PreparedOnlyOneRightAnswerTask } from 'types'
 import { ButtonBlock } from 'components/task/elements'
 import { useTaskContext, getColorCell, onValidText } from 'components/task/utils'
 import { onValidateTask, onSubmitUpdateHTML, onMountUpdateHTML, onCleanHTML } from './utils'
-import s from './RightAnswerTask.module.scss'
+import s from './OnlyOneOrTwoRightAnswerTask.module.scss'
 
-interface RightAnswerViewProps {
+interface OnlyOneOrTwoRightAnswerTaskProps {
   onRepeat: () => void
 }
 
-export const RightAnswerTask: FC<RightAnswerViewProps> = (props) => {
+export const OnlyOneOrTwoRightAnswerTask: FC<OnlyOneOrTwoRightAnswerTaskProps> = (props) => {
   const { withCheck, difficultyLevel, setData, getData } = useTaskContext()
   const { onRepeat } = props
 
   const taskRef = useRef<HTMLDivElement>(null)
 
-  const [data, setCurrentData] = useState(getData(difficultyLevel) as PreparedRightAnswerTask)
+  const [data, setCurrentData] = useState(
+    getData(difficultyLevel) as PreparedOnlyOneRightAnswerTask,
+  )
   const [isTaskNotFinished, setTaskNotFinishStatus] = useState(true)
   const [disableBtn, setDisableBtnStatus] = useState(true)
   const [validateText, setValidateText] = useState('')
@@ -27,19 +29,17 @@ export const RightAnswerTask: FC<RightAnswerViewProps> = (props) => {
   const [statusValidation, setValidationStatus] = useState(true)
 
   useEffect(() => {
-    setCurrentData(getData(difficultyLevel) as PreparedRightAnswerTask)
+    setCurrentData(getData(difficultyLevel) as PreparedOnlyOneRightAnswerTask)
   }, [getData, difficultyLevel])
 
   useEffect(() => {
+    console.log(data)
+
     if (!isTaskNotFinished && data) {
       // запустить только один раз при монтировании компонента, но после получения Data, не менять условие
       onMountUpdateHTML(withCheck, data, taskRef)
     }
-    if (
-      !!data?.chosenAnswerIDs &&
-      !!Object.keys(data?.chosenAnswerIDs).length &&
-      Object.keys(data?.chosenAnswerIDs).length === Object.keys(data.taskCorrectAnswerIDs).length
-    ) {
+    if (!!data?.chosenAnswerID && !!data?.chosenWords) {
       setDisableBtnStatus(false)
     } else {
       setDisableBtnStatus(true)
@@ -47,31 +47,28 @@ export const RightAnswerTask: FC<RightAnswerViewProps> = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data])
 
-  const onClickWordBtn = (groupID: string, itemID: string, word: string) => {
-    if (!groupID || !itemID || !isTaskNotFinished) {
+  const onClickWordBtn = (itemID: string, word: string) => {
+    if (!itemID || !isTaskNotFinished) {
       return
     }
 
-    const index = data.taskAnswers.findIndex((item) => item.id === groupID)
-
     setCurrentData((prevState) => ({
       ...prevState,
-      taskCorrectAnswerIDs: prevState.taskCorrectAnswerIDs,
-      chosenAnswerIDs: { ...prevState.chosenAnswerIDs, [groupID]: itemID },
-      chosenWords: prevState.chosenWords.toSpliced(index, 1, word),
+      chosenAnswerID: itemID,
+      chosenWords: word.split('/'),
     }))
   }
 
   const onSubmitTask = () => {
-    const { status, validationBlockIds, validationItemIds } = onValidateTask(data)
+    const { status, validation } = onValidateTask(data)
     const text = onValidText(status, withCheck)
     !!data && setData(data, difficultyLevel)
 
     setValidationStatus(status)
-    setValidationArray(validationItemIds)
+    setValidationArray(validation)
     setValidateText(text)
     setTaskNotFinishStatus(false)
-    onSubmitUpdateHTML(validationBlockIds, withCheck, data.chosenWords, taskRef)
+    onSubmitUpdateHTML(validation, withCheck, data.chosenWords, status, taskRef)
   }
 
   const onRepeatTask = () => {
@@ -88,29 +85,26 @@ export const RightAnswerTask: FC<RightAnswerViewProps> = (props) => {
         ref={taskRef}
       />
       <div className={s.answerBlockWrapper}>
-        {data?.taskAnswers.map((item) => (
-          <div className={s.answerGroupWrapper} key={item.id}>
-            {item.answers.map(
-              (subitem) =>
-                subitem.value && (
-                  <Button
-                    type="default"
-                    shape="round"
-                    key={subitem.id}
-                    onClick={() => {
-                      onClickWordBtn(item.id, subitem.id, subitem.value)
-                    }}
-                    style={
-                      !isTaskNotFinished && data?.chosenAnswerIDs[item.id] === subitem.id
-                        ? getColorCell(withCheck, validationArray, subitem.id)
-                        : {}
-                    }
-                    className={classNames({
-                      [s.chosenWordBtn]: data?.chosenAnswerIDs[item.id] === subitem.id,
-                    })}>
-                    {subitem.value}
-                  </Button>
-                ),
+        {data?.formattedAnswers.map((item) => (
+          <div className={s.answerInColumnGroupWrapper} key={item.id}>
+            {item.value && (
+              <Button
+                type="default"
+                shape="round"
+                key={item.id}
+                onClick={() => {
+                  onClickWordBtn(item.id, item.value)
+                }}
+                style={
+                  !isTaskNotFinished && data?.chosenAnswerID === item.id
+                    ? getColorCell(withCheck, validationArray, item.id)
+                    : {}
+                }
+                className={classNames({
+                  [s.chosenWordBtn]: data?.chosenAnswerID === item.id,
+                })}>
+                {item.value}
+              </Button>
             )}
           </div>
         ))}

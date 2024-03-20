@@ -1,10 +1,11 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 /* eslint-disable react/no-danger */
 import { FC, useEffect, useState, useRef, ChangeEvent } from 'react'
 import { PreparedAnswerFromSelectTask } from 'types'
 import { ButtonBlock } from 'components/task/elements'
-import { useTaskContext, getColorCell, onValidText } from 'components/task/utils'
-import { onValidateTask } from './utils'
+import { useTaskContext, onValidText } from 'components/task/utils'
+import { onCleanHTML, onMountUpdateHTML, onSubmitUpdateHTML, onValidateTask } from './utils'
 import s from './AnswerFromSelectView.module.scss'
 
 interface AnswerFromSelectProps {
@@ -22,19 +23,18 @@ export const AnswerFromSelectTask: FC<AnswerFromSelectProps> = (props) => {
   const [isTaskNotFinished, setTaskNotFinishStatus] = useState(true)
   const [disableBtn, setDisableBtnStatus] = useState(true)
   const [validateText, setValidateText] = useState('')
-  const [validationArray, setValidationArray] = useState<string[]>([])
   const [statusValidation, setValidationStatus] = useState(true)
 
   useEffect(() => {
+    isDataMount && setDataMountStatus(false) // fix for activate useEffect
     setCurrentData(getData(difficultyLevel) as PreparedAnswerFromSelectTask)
   }, [getData, difficultyLevel])
 
   useEffect(() => {
     if (!isDataMount) {
-      // fix activate addEventListener after data mounted, don`t change
+      // fix activate addEventListener for select after data mounted, DO NOT CHANGE
       return undefined
     }
-
     const handleSelectChange = (e: Event) => {
       const targetEvent = (e as unknown as ChangeEvent<HTMLSelectElement>).target
 
@@ -46,8 +46,7 @@ export const AnswerFromSelectTask: FC<AnswerFromSelectProps> = (props) => {
       }
 
       setCurrentData((prevState) => ({
-        taskHTMLContent: prevState.taskHTMLContent,
-        taskCorrectAnswerIDs: prevState.taskCorrectAnswerIDs,
+        ...prevState,
         chosenAnswerIDs: { ...prevState.chosenAnswerIDs, [groupID]: itemID },
       }))
     }
@@ -65,6 +64,10 @@ export const AnswerFromSelectTask: FC<AnswerFromSelectProps> = (props) => {
   }, [isDataMount])
 
   useEffect(() => {
+    if (!isTaskNotFinished && data) {
+      // запустить только один раз при монтировании компонента, но после получения Data, не менять условие
+      onMountUpdateHTML(withCheck, data, taskRef)
+    }
     if (data && !!Object.keys(data).length) {
       setDataMountStatus(true)
     }
@@ -83,15 +86,19 @@ export const AnswerFromSelectTask: FC<AnswerFromSelectProps> = (props) => {
     const { status, validation } = onValidateTask(data)
     const text = onValidText(status, withCheck)
     !!data && setData(data, difficultyLevel)
+
     setValidationStatus(status)
-    setValidationArray(validation)
     setValidateText(text)
     setTaskNotFinishStatus(false)
+    onSubmitUpdateHTML(validation, withCheck, taskRef)
+    setDataMountStatus(false) // fix for activate useEffect
   }
 
   const onRepeatTask = () => {
     setTaskNotFinishStatus(true)
+    isDataMount && setDataMountStatus(false) // fix for activate useEffect
     onRepeat()
+    onCleanHTML(taskRef)
   }
 
   return (

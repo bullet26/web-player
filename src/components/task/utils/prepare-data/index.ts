@@ -4,6 +4,8 @@ import { preparedCategorizeTask } from './categorize-task'
 import { preparedSplitSentenceTask } from './split-sentence-task'
 import { preparedAnswerFromSelectTask } from './select-task'
 import { preparedRightAnswerTask } from './right-answer-task'
+import { preparedOnlyOneOrTwoRightAnswerTask } from './only-one-right-answer-task'
+import { preparedSortDialogueTask } from './sort-dialogue-task'
 
 export const preparedTaskData = (
   type: Type,
@@ -31,6 +33,12 @@ export const preparedTaskData = (
   }
   if (type === 'rightAnswerTask') {
     return preparedRightAnswerTask(currentData, randomPlacement)
+  }
+  if (type === 'onlyOneOrTwoRightAnswerTask') {
+    return preparedOnlyOneOrTwoRightAnswerTask(currentData, randomPlacement)
+  }
+  if (type === 'sortDialogue') {
+    return preparedSortDialogueTask(currentData, randomPlacement)
   }
   return null
 }

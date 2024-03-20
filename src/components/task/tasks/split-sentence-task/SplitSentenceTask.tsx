@@ -52,7 +52,7 @@ export const SplitSentenceTask: FC<SplitSentenceTaskProps> = (props) => {
 
   const onClickInInitialWordBtn = (index: number, word: string) => {
     setCurrentData((prevState) => ({
-      correctOrderSentence: prevState.correctOrderSentence,
+      ...prevState,
       compareSentence: [...prevState.compareSentence, word],
       initialSentence: prevState.initialSentence.toSpliced(index, 1),
     }))
@@ -63,7 +63,7 @@ export const SplitSentenceTask: FC<SplitSentenceTaskProps> = (props) => {
       return
     }
     setCurrentData((prevState) => ({
-      correctOrderSentence: prevState.correctOrderSentence,
+      ...prevState,
       compareSentence: prevState.compareSentence.toSpliced(index, 1),
       initialSentence: [...prevState.initialSentence, word],
     }))

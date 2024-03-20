@@ -1,33 +1,30 @@
-import { PreparedRightAnswerTask } from 'types'
+import { PreparedOnlyOneRightAnswerTask } from 'types'
 import { getColorCircle, getColorBorderInString } from 'components/task/utils'
 import { RefObject } from 'react'
 
-export const onValidateTask = (data: PreparedRightAnswerTask) => {
+export const onValidateTask = (data: PreparedOnlyOneRightAnswerTask) => {
   let status = true
-  const validationBlockIds: string[] = []
-  const validationItemIds: string[] = []
+  const validation: string[] = []
 
   if (!data) {
-    return { status: false, validationBlockIds, validationItemIds }
+    return { status: false, validation }
   }
 
-  const { taskCorrectAnswerIDs, chosenAnswerIDs } = data
+  const { taskCorrectAnswerID, chosenAnswerID } = data
 
-  Object.entries(chosenAnswerIDs).forEach(([key, value]) => {
-    if (taskCorrectAnswerIDs[key] !== value) {
-      status = false
-      validationBlockIds.push(key)
-      validationItemIds.push(value)
-    }
-  })
+  if (taskCorrectAnswerID !== chosenAnswerID) {
+    validation.push(chosenAnswerID)
+    status = false
+  }
 
-  return { status, validationBlockIds, validationItemIds }
+  return { status, validation }
 }
 
 export const onSubmitUpdateHTML = (
   validation: string[],
   withCheck: boolean,
   initialWords: string[],
+  status: boolean,
   taskRef: RefObject<HTMLDivElement>,
 ) => {
   const words = [...initialWords]
@@ -41,23 +38,23 @@ export const onSubmitUpdateHTML = (
     }
 
     lineNode.innerHTML += words.shift()
-    lineNode.style.cssText = getColorBorderInString(withCheck, validation, itemID, 'bottom')
-    circle.style.cssText = getColorCircle(withCheck, validation, itemID)
+    lineNode.style.cssText = getColorBorderInString(withCheck, validation, itemID, 'bottom', status)
+    circle.style.cssText = getColorCircle(withCheck, validation, itemID, status)
   })
 }
 
 export const onMountUpdateHTML = (
   withCheck: boolean,
-  data: PreparedRightAnswerTask,
+  data: PreparedOnlyOneRightAnswerTask,
   taskRef: RefObject<HTMLDivElement>,
 ) => {
   if (!data || !data?.chosenWords.length) {
     return
   }
 
-  const { validationBlockIds: validation } = onValidateTask(data)
+  const { status, validation } = onValidateTask(data)
 
-  onSubmitUpdateHTML(validation, withCheck, data.chosenWords, taskRef)
+  onSubmitUpdateHTML(validation, withCheck, data.chosenWords, status, taskRef)
 }
 
 export const onCleanHTML = (taskRef: RefObject<HTMLDivElement>) => {

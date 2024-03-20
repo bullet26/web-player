@@ -45,10 +45,8 @@ export const CategorizeTask: FC<CategorizeTaskProps> = (props) => {
     }
 
     setCurrentData((prevState) => ({
-      mainWords: prevState.mainWords,
+      ...prevState,
       otherWords: prevState.otherWords.filter((item) => item.id !== dragItem.id),
-      rowCount: prevState.rowCount,
-      correctWordsGroup: prevState.correctWordsGroup,
       comparedWordsGroup: {
         ...prevState.comparedWordsGroup,
         [dropItem.index]: {
@@ -75,10 +73,8 @@ export const CategorizeTask: FC<CategorizeTaskProps> = (props) => {
     }
 
     setCurrentData((prevState) => ({
-      mainWords: prevState.mainWords,
+      ...prevState,
       otherWords: [...prevState.otherWords, { id: itemID, word, groupNumber }],
-      rowCount: prevState.rowCount,
-      correctWordsGroup: prevState.correctWordsGroup,
       comparedWordsGroup: {
         ...prevState.comparedWordsGroup,
         [index]: {

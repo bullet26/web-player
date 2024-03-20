@@ -19,6 +19,7 @@ export {
   type RightAnswerTask,
   type PreparedAnswerFromSelectTask,
   type PreparedRightAnswerTask,
+  type PreparedOnlyOneRightAnswerTask,
 } from './right-answer-task'
 
 export {
@@ -46,6 +47,7 @@ export {
   type SortDialogueSentence,
   type SortDialogueTaskText,
   type SortDialogueTask,
+  type PreparedSortDialogueTask,
 } from './sort-dialogue-task'
 
 export {

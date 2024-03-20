@@ -18,6 +18,8 @@ import {
   PreparedSplitSentenceTask,
   PreparedAnswerFromSelectTask,
   PreparedRightAnswerTask,
+  PreparedOnlyOneRightAnswerTask,
+  PreparedSortDialogueTask,
 } from 'types'
 
 export const types = [
@@ -66,6 +68,8 @@ export type PreparedTask =
   | PreparedSplitSentenceTask
   | PreparedAnswerFromSelectTask
   | PreparedRightAnswerTask
+  | PreparedOnlyOneRightAnswerTask
+  | PreparedSortDialogueTask
 
 export type DataTypeItem = {
   text?: string

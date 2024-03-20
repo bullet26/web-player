@@ -6,10 +6,11 @@ import s from './DifficultyLevelTab.module.scss'
 
 interface DifficultyLevelTabProps {
   childrenOption: ReactNode
+  destroyInactiveTabPane: boolean
 }
 
 export const DifficultyLevelTab: FC<DifficultyLevelTabProps> = (props) => {
-  const { childrenOption } = props
+  const { childrenOption, destroyInactiveTabPane = false } = props
   const { difficultyLevel, setDifficultyLevel } = useTaskContext()
 
   const items: TabsProps['items'] = [
@@ -42,6 +43,7 @@ export const DifficultyLevelTab: FC<DifficultyLevelTabProps> = (props) => {
     <div className="difficultyLevel">
       <div className={s.label}>Рівень складності поточного завдання</div>
       <Tabs
+        destroyInactiveTabPane={destroyInactiveTabPane}
         defaultActiveKey="1"
         activeKey={difficultyLevel}
         items={items}

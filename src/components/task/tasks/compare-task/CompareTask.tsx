@@ -95,7 +95,7 @@ export const CompareTask: FC<CompareTaskProps> = (props) => {
   }
 
   return (
-    <div className="view">
+    <div>
       {data?.leftWords.map((item, i) => (
         <div key={item.id} className={s.compareTaskGroupItem}>
           <div className={s.leftPart}>{item.word}</div>

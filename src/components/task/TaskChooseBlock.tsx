@@ -8,6 +8,8 @@ import {
   SplitSentenceTask,
   AnswerFromSelectTask,
   RightAnswerTask,
+  OnlyOneOrTwoRightAnswerTask,
+  SortDialogueTask,
 } from 'components/task/tasks'
 
 interface TaskChooseBlockProps {
@@ -39,6 +41,10 @@ export const TaskChooseBlock: FC<TaskChooseBlockProps> = (props) => {
       {type === 'orderSplitSentence' && <SplitSentenceTask onRepeat={onRepeatTask} />}
       {type === 'answerFromSelect' && <AnswerFromSelectTask onRepeat={onRepeatTask} />}
       {type === 'rightAnswerTask' && <RightAnswerTask onRepeat={onRepeatTask} />}
+      {type === 'onlyOneOrTwoRightAnswerTask' && (
+        <OnlyOneOrTwoRightAnswerTask onRepeat={onRepeatTask} />
+      )}
+      {type === 'sortDialogue' && <SortDialogueTask onRepeat={onRepeatTask} />}
     </div>
   )
 }

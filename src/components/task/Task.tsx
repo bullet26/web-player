@@ -21,6 +21,8 @@ export const Task: FC<TaskProps> = (props) => {
   const passAgain = data?.parameters.includes('passAgain') ?? false
   const randomPlacement = data?.parameters.includes('randomPlacement') ?? false
 
+  const destroyInactiveTabDifficultyLevelTab = false
+
   const setData = (value: PreparedTask, _difficultyLevel: DifficultyLevel) => {
     if (_difficultyLevel === 'easy') {
       setDataEasyLevel(value)
@@ -70,7 +72,10 @@ export const Task: FC<TaskProps> = (props) => {
               <TaskChooseBlock type={type} data={data} />
             </div>
           ) : (
-            <DifficultyLevelTab childrenOption={<TaskChooseBlock type={type} data={data} />} />
+            <DifficultyLevelTab
+              childrenOption={<TaskChooseBlock type={type} data={data} />}
+              destroyInactiveTabPane={destroyInactiveTabDifficultyLevelTab}
+            />
           )}
         </div>
       </div>

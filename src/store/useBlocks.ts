@@ -313,70 +313,6 @@ const temporaryData = {
       title: '33',
       blocks: [
         {
-          id: 'EYHTjwsIEFz7h99ucf0Qi',
-          type: 'rightAnswerTask',
-          taskData: {
-            title: 'correct answer',
-            description: 'ююююю correct answer gggggggg',
-            taskText: [
-              {
-                taskQuestion:
-                  '<span>Heisenberg went to the Maximilian school at Munich until 1920, when he&nbsp;</span>&nbsp;<div contenteditable="false" class="skip" data-skip="w19NNQulsinao0Vgi7F8N"><span class="circle">1</span><span class="line"></span></div>&nbsp;<span>&nbsp;to the University of Munich to study physics under Sommerfeld, Wien, Pringsheim, and Rosenthal. During the winter of 1922-1923 he went to Göttingen to study physics under&nbsp;</span><a style="box-sizing: inherit; -webkit-font-smoothing: antialiased; border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-alternates: inherit; font-variant-position: inherit; font-stretch: inherit; line-height: inherit; font-family: &quot;Alfred Serif Regular&quot;, Times, &quot;Times New Roman&quot;, serif; font-optical-sizing: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 18px; vertical-align: baseline; transition-duration: 0.2s; transition-property: all; color: var(--lochMara);">Max Born</a><span>,&nbsp;</span><a style="box-sizing: inherit; -webkit-font-smoothing: antialiased; border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-alternates: inherit; font-variant-position: inherit; font-stretch: inherit; line-height: inherit; font-family: &quot;Alfred Serif Regular&quot;, Times, &quot;Times New Roman&quot;, serif; font-optical-sizing: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 18px; vertical-align: baseline; transition-duration: 0.2s; transition-property: all; color: var(--lochMara);">Franck</a><span>, and Hilbert. In 1923 he took his Ph.D. at the University of Munich and then&nbsp;</span>&nbsp;<div contenteditable="false" class="skip" data-skip="CFZGwnYv-TpnfnXJxs6JT"><span class="circle">2</span><span class="line"></span></div>&nbsp;<span>&nbsp;Assistant to Max Born at the University of Göttingen, and in 1924 he gained the&nbsp;</span><i style="box-sizing: inherit; -webkit-font-smoothing: antialiased; border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-alternates: inherit; font-variant-position: inherit; font-stretch: inherit; line-height: inherit; font-family: var(--secondary-font-italic); font-optical-sizing: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 18px; vertical-align: baseline; color: rgb(46, 42, 37);">venia legendi</i><span>&nbsp;at that University.</span>',
-                taskAnswers: [
-                  {
-                    id: 'w19NNQulsinao0Vgi7F8N',
-                    answers: [
-                      {
-                        id: 'RKZcRcWZDiIT2q_Y7D-0F',
-                        type: 'correct',
-                        value: 'went',
-                      },
-                      {
-                        type: 'incorrect',
-                        id: 'qTq2SUOsxOdaV2JDrZ6BC',
-                        value: 'go',
-                      },
-                      {
-                        type: 'incorrect',
-                        id: 'SBlPxBVZ8wvFVh_McycZj',
-                        value: 'did go',
-                      },
-                      {
-                        type: 'incorrect',
-                        id: 'UVzvRfAxXgHL-Cvaboy3N',
-                        value: 'had went',
-                      },
-                    ],
-                  },
-                  {
-                    id: 'CFZGwnYv-TpnfnXJxs6JT',
-                    answers: [
-                      {
-                        id: 'OfFAfXaYi2Ou6Dxqexejn',
-                        type: 'correct',
-                        value: 'became',
-                      },
-                      {
-                        type: 'incorrect',
-                        id: '-NV5L42aFCjxV0HWZF17x',
-                        value: 'become',
-                      },
-                      {
-                        type: 'incorrect',
-                        id: 'X1ONxwWzKBQcdYpEBdtnV',
-                        value: 'was',
-                      },
-                    ],
-                  },
-                ],
-                difficultyLevel: 'easy',
-              },
-            ],
-            parameters: ['withCheck', 'passAgain', 'randomPlacement', 'oneDifficultyLevel'],
-          },
-          savedInLibrary: false,
-        },
-        {
           id: 'bbbAGUheKh3LqERsGEtgr',
           type: 'answerFromSelect',
           taskData: {
@@ -554,12 +490,389 @@ const temporaryData = {
           },
           savedInLibrary: false,
         },
+        {
+          id: 'EYHTjwsIEFz7h99ucf0Qi',
+          type: 'rightAnswerTask',
+          taskData: {
+            title: 'correct answer',
+            description: 'ююююю correct answer gggggggg',
+            taskText: [
+              {
+                taskQuestion:
+                  '<span style="color: rgb(46, 42, 37); font-family: &quot;Alfred Serif Regular&quot;, Times, &quot;Times New Roman&quot;, serif; font-size: 18px;">Heisenberg went to the Maximilian school at Munich until 1920, when he&nbsp;</span>&nbsp;<div contenteditable="false" class="skip" data-skip="w19NNQulsinao0Vgi7F8N"><span class="circle">1</span><span class="line"></span></div>&nbsp;<span style="color: rgb(46, 42, 37); font-family: &quot;Alfred Serif Regular&quot;, Times, &quot;Times New Roman&quot;, serif; font-size: 18px;">&nbsp;to the University of Munich to study physics under Sommerfeld, Wien, Pringsheim, and Rosenthal. During the winter of 1922-1923 he went to Göttingen to study physics under&nbsp;</span><a style="box-sizing: inherit; -webkit-font-smoothing: antialiased; border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-alternates: inherit; font-variant-position: inherit; font-stretch: inherit; line-height: inherit; font-family: &quot;Alfred Serif Regular&quot;, Times, &quot;Times New Roman&quot;, serif; font-optical-sizing: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 18px; vertical-align: baseline; transition-duration: 0.2s; transition-property: all; color: var(--lochMara);">Max Born</a><span style="color: rgb(46, 42, 37); font-family: &quot;Alfred Serif Regular&quot;, Times, &quot;Times New Roman&quot;, serif; font-size: 18px;">,&nbsp;</span><a style="box-sizing: inherit; -webkit-font-smoothing: antialiased; border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-alternates: inherit; font-variant-position: inherit; font-stretch: inherit; line-height: inherit; font-family: &quot;Alfred Serif Regular&quot;, Times, &quot;Times New Roman&quot;, serif; font-optical-sizing: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 18px; vertical-align: baseline; transition-duration: 0.2s; transition-property: all; color: var(--lochMara);">Franck</a><span style="color: rgb(46, 42, 37); font-family: &quot;Alfred Serif Regular&quot;, Times, &quot;Times New Roman&quot;, serif; font-size: 18px;">, and Hilbert. In 1923 he took&nbsp;</span>&nbsp;<div contenteditable="false" class="skip" data-skip="YUul_ME8jSBwJOXX8HxGL"><span class="circle">2</span><span class="line"></span></div>&nbsp;<span style="color: rgb(46, 42, 37); font-family: &quot;Alfred Serif Regular&quot;, Times, &quot;Times New Roman&quot;, serif; font-size: 18px;">&nbsp;Ph.D. at the University of Munich and then&nbsp;</span>&nbsp;<div contenteditable="false" class="skip" data-skip="CFZGwnYv-TpnfnXJxs6JT"><span class="circle">3</span><span class="line"></span></div>&nbsp;<span style="color: rgb(46, 42, 37); font-family: &quot;Alfred Serif Regular&quot;, Times, &quot;Times New Roman&quot;, serif; font-size: 18px;">&nbsp;Assistant to Max Born at the University of Göttingen, and in 1924 he gained the&nbsp;</span><i style="box-sizing: inherit; -webkit-font-smoothing: antialiased; border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-alternates: inherit; font-variant-position: inherit; font-stretch: inherit; line-height: inherit; font-family: var(--secondary-font-italic); font-optical-sizing: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 18px; vertical-align: baseline; color: rgb(46, 42, 37);">venia legendi</i><span style="color: rgb(46, 42, 37); font-family: &quot;Alfred Serif Regular&quot;, Times, &quot;Times New Roman&quot;, serif; font-size: 18px;">&nbsp;at that University.</span>',
+                taskAnswers: [
+                  {
+                    id: 'w19NNQulsinao0Vgi7F8N',
+                    answers: [
+                      {
+                        id: 'RKZcRcWZDiIT2q_Y7D-0F',
+                        type: 'correct',
+                        value: 'went',
+                      },
+                      {
+                        type: 'incorrect',
+                        id: 'qTq2SUOsxOdaV2JDrZ6BC',
+                        value: 'go',
+                      },
+                      {
+                        type: 'incorrect',
+                        id: 'SBlPxBVZ8wvFVh_McycZj',
+                        value: 'did go',
+                      },
+                      {
+                        type: 'incorrect',
+                        id: 'UVzvRfAxXgHL-Cvaboy3N',
+                        value: 'had went',
+                      },
+                    ],
+                  },
+                  {
+                    id: 'YUul_ME8jSBwJOXX8HxGL',
+                    answers: [
+                      {
+                        id: '59GM3dcE84G5eYV_IBT1z',
+                        type: 'correct',
+                        value: 'his',
+                      },
+                      {
+                        type: 'incorrect',
+                        id: '-1TIB_QoDB-fduDxTOLIW',
+                        value: 'her',
+                      },
+                      {
+                        type: 'incorrect',
+                        id: 'c_ix8eT-mPTixAr2_5gNO',
+                        value: 'them',
+                      },
+                    ],
+                  },
+                  {
+                    id: 'CFZGwnYv-TpnfnXJxs6JT',
+                    answers: [
+                      {
+                        id: 'OfFAfXaYi2Ou6Dxqexejn',
+                        type: 'correct',
+                        value: 'became',
+                      },
+                      {
+                        type: 'incorrect',
+                        id: '-NV5L42aFCjxV0HWZF17x',
+                        value: 'become',
+                      },
+                      {
+                        type: 'incorrect',
+                        id: 'X1ONxwWzKBQcdYpEBdtnV',
+                        value: 'was',
+                      },
+                    ],
+                  },
+                ],
+                difficultyLevel: 'easy',
+              },
+              {
+                difficultyLevel: 'middle',
+                taskQuestion:
+                  '<div>Glück verlässt mich Herz verlässt&nbsp; mich&nbsp; Alles lässt mich Verlässt mich Glück verlässt mich</div>',
+                taskAnswers: [],
+              },
+              {
+                difficultyLevel: 'hard',
+                taskQuestion: "&nbsp;Feine Seele, ach so nackt Und ob ich steh', ganz ohne Haut",
+                taskAnswers: [],
+              },
+            ],
+            parameters: ['withCheck', 'passAgain', 'randomPlacement'],
+          },
+          savedInLibrary: false,
+        },
+        {
+          id: '6coLY_FYKKSBWqkOSVmOq',
+          type: 'onlyOneOrTwoRightAnswerTask',
+          taskData: {
+            title: 'one right answer',
+            description: '44 ddddd 3333 fffff ',
+            taskText: [
+              {
+                difficultyLevel: 'easy',
+                taskQuestion:
+                  '&nbsp;If I&nbsp;&nbsp;<div data-skip="1AX_4yIsfhqZMCIOi1I5y" class="skip" contenteditable="false"><span class="circle">1</span><span class="line"></span></div>&nbsp;&nbsp;for a promotion, I&nbsp;&nbsp;<div data-skip="Vc3U4CQS4Cz6PycQJT-nR" class="skip" contenteditable="false"><span class="circle">2</span><span class="line"></span></div>&nbsp;&nbsp;a head of my department.&nbsp;',
+                taskAnswers: [
+                  {
+                    id: '1AX_4yIsfhqZMCIOi1I5y',
+                    answers: [
+                      {
+                        id: 'VKIg-2u7ydmGjCyqzgDmE',
+                        type: 'correct',
+                        value: 'had asked',
+                      },
+                      {
+                        type: 'incorrect',
+                        id: 'uQP5y0OpUWNztS_qQTDbl',
+                        value: 'had ask',
+                      },
+                      {
+                        type: 'incorrect',
+                        id: 'bn23kr1w2PecQMo357ndf',
+                        value: 'ask',
+                      },
+                      {
+                        type: 'incorrect',
+                        id: 'rhWj2ijLFQdMGkK0PZEeM',
+                        value: 'have asked',
+                      },
+                    ],
+                  },
+                  {
+                    id: 'Vc3U4CQS4Cz6PycQJT-nR',
+                    answers: [
+                      {
+                        id: 'zzWcO4KeGby35IGxtMzf1',
+                        type: 'correct',
+                        value: 'would have become',
+                      },
+                      {
+                        id: '-51McKUYNSqqs746g1L2z',
+                        type: 'incorrect',
+                        value: 'would had become',
+                      },
+                      {
+                        id: 'gHYKthfNrR5icJzYoW22M',
+                        type: 'incorrect',
+                        value: 'have become',
+                      },
+                      {
+                        id: '_qSllnoP7NXvpBinr_E-r',
+                        type: 'incorrect',
+                        value: 'would become',
+                      },
+                    ],
+                  },
+                ],
+              },
+              {
+                difficultyLevel: 'middle',
+                taskQuestion:
+                  '&nbsp;When your component&nbsp;&nbsp;<div data-skip="l_9DzJUNh44B8xfQPzaZ_" class="skip" contenteditable="false"><span class="circle">1</span><span class="line"></span></div>&nbsp;&nbsp;added&nbsp;&nbsp;<div data-skip="7zyAih5XX6zpZHHtBzYCs" class="skip" contenteditable="false"><span class="circle">2</span><span class="line"></span></div>&nbsp;&nbsp;the DOM, React will run your setup function.&nbsp;',
+                taskAnswers: [
+                  {
+                    id: 'l_9DzJUNh44B8xfQPzaZ_',
+                    answers: [
+                      {
+                        id: 'fLmuD956-Jr4USyNuJksG',
+                        type: 'correct',
+                        value: 'is',
+                      },
+                      {
+                        type: 'incorrect',
+                        id: 'fIG3lVGnt3KP6E-3lYwYl',
+                        value: 'was',
+                      },
+                      {
+                        type: 'incorrect',
+                        id: 'qsgm98NEwnSBB4dUMOrYY',
+                        value: 'are',
+                      },
+                      {
+                        type: 'incorrect',
+                        id: 'r8tWBvQ20jJe5ROu-DJqC',
+                        value: 'were',
+                      },
+                    ],
+                  },
+                  {
+                    id: '7zyAih5XX6zpZHHtBzYCs',
+                    answers: [
+                      {
+                        id: '_QnPMvZVgwVRub9u3_vL7',
+                        type: 'correct',
+                        value: 'to',
+                      },
+                      {
+                        id: '5IrXmsQi7Jmo1N_Xd--vj',
+                        type: 'incorrect',
+                        value: 'in',
+                      },
+                      {
+                        id: 'zVbG2pIk7RMAOLNZ8Evcf',
+                        type: 'incorrect',
+                        value: 'on',
+                      },
+                      {
+                        id: 'r6Ba9wk2Vqzakp1Nlr44d',
+                        type: 'incorrect',
+                        value: 'at',
+                      },
+                    ],
+                  },
+                ],
+              },
+              {
+                difficultyLevel: 'hard',
+                taskQuestion:
+                  '&nbsp;The convention is to name state variables like [something, setSomething] using&nbsp;&nbsp;<div data-skip="6GVRPoAzIfHdfvE1jn8ex" class="skip" contenteditable="false"><span class="circle">1</span><span class="line"></span></div>&nbsp;&nbsp;destructuring.',
+                taskAnswers: [
+                  {
+                    id: '6GVRPoAzIfHdfvE1jn8ex',
+                    answers: [
+                      {
+                        id: 'a8ignYdjh4YZHLk2CMUCz',
+                        type: 'correct',
+                        value: 'array',
+                      },
+                      {
+                        type: 'incorrect',
+                        id: 'bqCDIsJghLVbT4AacdYRJ',
+                        value: 'object',
+                      },
+                      {
+                        type: 'incorrect',
+                        id: 'fJtVLSE94dH94dqd5abKO',
+                        value: 'hash-table',
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+            parameters: ['withCheck', 'passAgain', 'randomPlacement'],
+          },
+          savedInLibrary: false,
+        },
+        {
+          id: 'hQXup1M3zM4psX5Oo6I9o',
+          type: 'onlyOneOrTwoRightAnswerTask',
+          taskData: {
+            title: 'one right answer',
+            description: 'one right answer one right answer one right answer',
+            taskText: [
+              {
+                taskQuestion:
+                  '&nbsp;If I&nbsp;&nbsp;<div data-skip="IRG1LIAJx9z6OKxul7SYy" class="skip" contenteditable="false"><span class="circle">1</span><span class="line"></span></div>&nbsp;&nbsp;more money, I\'d travel more.<div><br></div>',
+                taskAnswers: [
+                  {
+                    id: 'IRG1LIAJx9z6OKxul7SYy',
+                    answers: [
+                      {
+                        id: '5NfJwsQ9o4d8l6HqXs73L',
+                        type: 'correct',
+                        value: 'had',
+                      },
+                      {
+                        type: 'incorrect',
+                        id: 'YvAQIV-llzuYYYd2Yg4gE',
+                        value: 'have',
+                      },
+                      {
+                        type: 'incorrect',
+                        id: '56Jx0ydfBToUaHHcOVHd6',
+                        value: 'would have',
+                      },
+                    ],
+                  },
+                ],
+                difficultyLevel: 'easy',
+              },
+            ],
+            parameters: ['oneDifficultyLevel'],
+          },
+          savedInLibrary: false,
+        },
       ],
     },
     {
       id: 'esrQm-KHhxoQKGFKx5VW3',
       title: '44',
-      blocks: [],
+      blocks: [
+        {
+          id: 'H2QCqsQsBmyhSSTYz4dJ-',
+          type: 'sortDialogue',
+          taskData: {
+            title: 'sord dialogue',
+            description: "Das war's dann. Du musst nach unten gehen.",
+            taskText: [
+              {
+                sentences: [
+                  {
+                    id: 'FYZzLZaEbdLMHmjTrq6Hd',
+                    sentence: 'Katrine nodded. ‘You’re good, Harry.’ ',
+                  },
+                  {
+                    id: 'dGKkdCbhAZpDaU0fQMl48',
+                    sentence:
+                      'He shook his head. ‘If I were I would have solved this case long ago. I was wrong every step of the way.’ ',
+                  },
+                  {
+                    id: 'OLqcS46XWDCJbTAG3NLni',
+                    sentence:
+                      ' ‘So you say, but I happen to know there are other people who rate you as well.’ ',
+                  },
+                  {
+                    id: 'LrPcM3uxY_wf7Yl6ZT0Un',
+                    sentence: ' ‘OK.’ ',
+                  },
+                ],
+                difficultyLevel: 'easy',
+              },
+              {
+                difficultyLevel: 'middle',
+                sentences: [
+                  {
+                    id: 'miZcCokjKXecR1ZjBrdCG',
+                    sentence:
+                      ' And it’s these others I’d like to talk to you about. There’s a vacancy in Crime Squad. We’d all like you to apply for it.',
+                  },
+                  {
+                    id: 'dQKhrw0_1PyLE3QAsLjka',
+                    sentence: ' We?',
+                  },
+                  {
+                    id: 'IxQou9XfWeq4Nl2G_X-Tr',
+                    sentence: ' Bodil Melling and me.',
+                  },
+                  {
+                    id: '3b8nnXCbnDivm0m7RJcWl',
+                    sentence: ' That’s “both”, you said “all”.',
+                  },
+                  {
+                    id: 'SP0EUEQ-_dw6eKSO2-IPy',
+                    sentence:
+                      'Mikael Bellman has mentioned it might be a good idea. That we could create a special position. A freer role. You could even start with this murder in Frogner.',
+                  },
+                  {
+                    id: 'GH2tYRY5st2C6i1lbCoje',
+                    sentence: 'Any suspects?',
+                  },
+                  {
+                    id: 'WOeh0XN6ptsYtbbtsyNmt',
+                    sentence:
+                      'The victim had a long-standing inheritance dispute with his brother. The brother is being questioned right now, but he has an alibi apparently.',
+                  },
+                ],
+              },
+              {
+                difficultyLevel: 'hard',
+                sentences: [
+                  {
+                    id: 'yGrl3k15usw_qZeJM2gtv',
+                    sentence: 'Give my regards and say thanks he said. ‘But no thanks.’ ',
+                  },
+                  {
+                    id: 'MTyCiKGaVFAv2e3BgcQ9d',
+                    sentence: 'Why not?',
+                  },
+                  {
+                    id: 'xBQaIS7PKrXB-WHc8feZz',
+                    sentence:
+                      'Harry gave a wry smile. ‘I’ve realised during this case that I’m only good for one thing, and that’s catching serial killers. Real ones. Statistically, you’ll pass a serial killer on the street just seven times in the course of a lifetime. In which case I’ve used up mine. There aren’t going to be any more turning up.',
+                  },
+                ],
+              },
+            ],
+            parameters: ['withCheck', 'passAgain', 'randomPlacement'],
+          },
+          savedInLibrary: false,
+        },
+      ],
     },
   ],
 }

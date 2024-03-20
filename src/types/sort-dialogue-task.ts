@@ -13,3 +13,8 @@ export interface SortDialogueTaskText {
 export interface SortDialogueTask extends Omit<RightAnswerTask, 'taskText'> {
   taskText: SortDialogueTaskText[]
 }
+
+export interface PreparedSortDialogueTask {
+  correctOrderSentences: SortDialogueSentence[]
+  compareSentences: SortDialogueSentence[]
+}
