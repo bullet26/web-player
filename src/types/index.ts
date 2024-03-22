@@ -20,6 +20,7 @@ export {
   type PreparedAnswerFromSelectTask,
   type PreparedRightAnswerTask,
   type PreparedOnlyOneRightAnswerTask,
+  type PreparedTypeAnswerInput,
 } from './right-answer-task'
 
 export {
@@ -54,6 +55,7 @@ export {
   type TrueOrFalseItem,
   type TrueOrFalseTaskText,
   type TrueOrFalseTask,
+  type PreparedTrueOrFalseTask,
 } from './true-or-false-task'
 
 export { type CorrectMistakesText, type CorrectMistakesTask } from './correct-mistakes-task'

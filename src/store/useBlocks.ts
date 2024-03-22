@@ -313,6 +313,46 @@ const temporaryData = {
       title: '33',
       blocks: [
         {
+          id: '0qfKQ6Wof8eYAMMnAAR8n',
+          type: 'trueOrFalseTask',
+          taskData: {
+            title: 'true /false',
+            description: '44 ddddd 3333 fffff ',
+            taskText: [
+              {
+                difficultyLevel: 'easy',
+                taskItemData: {
+                  id: 'eYZBnE9wW_4uADnsRHawH',
+                  format: 'trueOrFalse',
+                  question:
+                    'Since 1777, the USA flag was officially modified 26 times. The first flag had 13 stripes and 13 stars arranged in a circle',
+                  answer: true,
+                },
+              },
+              {
+                difficultyLevel: 'middle',
+                taskItemData: {
+                  id: 'baS8i7-W0g1atyVepwK5S',
+                  format: 'trueOrFalse',
+                  question: 'Nenn mir den letzten Hauch der Unendlichkeit',
+                  answer: false,
+                },
+              },
+              {
+                difficultyLevel: 'hard',
+                taskItemData: {
+                  id: '8xZHgFXDYtKPVLty9A0PO',
+                  format: 'yesOrNo',
+                  question: 'Schwarz, schwarz ist alles was ich bin',
+                  answer: false,
+                },
+              },
+            ],
+            parameters: ['withCheck', 'passAgain', 'randomPlacement'],
+          },
+          savedInLibrary: false,
+        },
+        {
           id: 'bbbAGUheKh3LqERsGEtgr',
           type: 'answerFromSelect',
           taskData: {
@@ -774,6 +814,94 @@ const temporaryData = {
               },
             ],
             parameters: ['oneDifficultyLevel'],
+          },
+          savedInLibrary: false,
+        },
+        {
+          id: 'd3IobbQ5HaSFC_dN6Idh5',
+          type: 'typeAnswerTask',
+          taskData: {
+            title: 'type correct answer',
+            description: '44 ddddd 3333 fffff ',
+            taskText: [
+              {
+                difficultyLevel: 'easy',
+                taskQuestion:
+                  '&nbsp;I&nbsp;&nbsp;<div data-skip="oAuiOvBfJBC7DmpM20CYi" class="skip" contenteditable="false"><span class="circle">1</span><span class="rectangle"></span></div>&nbsp;while I&nbsp;&nbsp;<div data-skip="oA6IxKSlazricYUaGoRqL" class="skip" contenteditable="false"><span class="circle">2</span><span class="rectangle"></span></div>&nbsp;&nbsp;down the stairs.<div><br></div>',
+                taskAnswers: [
+                  {
+                    id: 'oAuiOvBfJBC7DmpM20CYi',
+                    answers: [
+                      {
+                        id: 'XVgho8BFCCPZDjQ3-fQjY',
+                        type: 'correct',
+                        value: 'fell down',
+                      },
+                    ],
+                  },
+                  {
+                    id: 'oA6IxKSlazricYUaGoRqL',
+                    answers: [
+                      {
+                        id: 'Mri1aRDFrTSUCrFxN_gva',
+                        type: 'correct',
+                        value: 'was going',
+                      },
+                    ],
+                  },
+                ],
+              },
+              {
+                difficultyLevel: 'middle',
+                taskQuestion:
+                  'I&nbsp;&nbsp;<div data-skip="ci9oI2Ptk9-hYFoTBmupF" class="skip" contenteditable="false"><span class="circle">1</span><span class="rectangle"></span></div>&nbsp;&nbsp;Peter last night.<div><br></div><div>Oh really. I&nbsp;&nbsp;<div data-skip="z8UmKNxlyGbocHjCGNzST" class="skip" contenteditable="false"><span class="circle">2</span><span class="rectangle"></span></div>&nbsp;him since last summer. Is he OK?</div>',
+                taskAnswers: [
+                  {
+                    id: 'ci9oI2Ptk9-hYFoTBmupF',
+                    answers: [
+                      {
+                        id: 'ghDR88y6My2azU5puKc2f',
+                        type: 'correct',
+                        value: 'saw',
+                      },
+                    ],
+                  },
+                  {
+                    id: 'z8UmKNxlyGbocHjCGNzST',
+                    answers: [
+                      {
+                        id: 'COdOriH80VX5ZrwQllP_Z',
+                        type: 'correct',
+                        value: "haven't seen ",
+                      },
+                      {
+                        type: 'correct',
+                        id: 'kLCKVz-_G4IQJrB9w0F8N',
+                        value: 'have not seen',
+                      },
+                    ],
+                  },
+                ],
+              },
+              {
+                difficultyLevel: 'hard',
+                taskQuestion:
+                  '&nbsp;Lorem&nbsp;&nbsp;<div data-skip="HOXu1m3blzUEwM5yqwj1I" class="skip" contenteditable="false"><span class="circle">1</span><span class="rectangle"></span></div>&nbsp;&nbsp;dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
+                taskAnswers: [
+                  {
+                    id: 'HOXu1m3blzUEwM5yqwj1I',
+                    answers: [
+                      {
+                        id: 'PWCahtkAwD0G01HwurCml',
+                        type: 'correct',
+                        value: 'ipsum',
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+            parameters: ['withCheck', 'passAgain', 'randomPlacement'],
           },
           savedInLibrary: false,
         },

@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 import { FC, useEffect, useState } from 'react'
+import { flushSync } from 'react-dom'
 import { DnDItemTypes, PreparedSortDialogueTask } from 'types'
 import { ButtonBlock } from 'components/task/elements'
 import { useTaskContext, getColorBorder, onValidText } from 'components/task/utils'
@@ -22,6 +23,8 @@ export const SortDialogueTask: FC<SortDialogueTaskProps> = (props) => {
   const [validateText, setValidateText] = useState('')
   const [validationArray, setValidationArray] = useState<string[]>([])
   const [statusValidation, setValidationStatus] = useState(true)
+  // Call flushSync to force React to flush any pending work and update the DOM synchronously.
+  // Using flushSync is uncommon and can hurt the performance of your app.
 
   useEffect(() => {
     setCurrentData(getData(difficultyLevel) as PreparedSortDialogueTask)
@@ -30,12 +33,14 @@ export const SortDialogueTask: FC<SortDialogueTaskProps> = (props) => {
   const movePhraseInDialogue = (dragIndex: number, hoverIndex: number) => {
     const draggedPhrase = data.compareSentences[dragIndex]
 
-    setCurrentData((prevState) => ({
-      ...prevState,
-      compareSentences: prevState.compareSentences
-        .toSpliced(dragIndex, 1)
-        .toSpliced(hoverIndex, 0, draggedPhrase),
-    }))
+    flushSync(() => {
+      setCurrentData((prevState) => ({
+        ...prevState,
+        compareSentences: prevState.compareSentences
+          .toSpliced(dragIndex, 1)
+          .toSpliced(hoverIndex, 0, draggedPhrase),
+      }))
+    })
   }
 
   const styleItem = (id: string) => {

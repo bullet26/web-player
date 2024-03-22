@@ -33,8 +33,6 @@ export const OnlyOneOrTwoRightAnswerTask: FC<OnlyOneOrTwoRightAnswerTaskProps> =
   }, [getData, difficultyLevel])
 
   useEffect(() => {
-    console.log(data)
-
     if (!isTaskNotFinished && data) {
       // запустить только один раз при монтировании компонента, но после получения Data, не менять условие
       onMountUpdateHTML(withCheck, data, taskRef)

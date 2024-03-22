@@ -46,3 +46,9 @@ export interface PreparedOnlyOneRightAnswerTask {
   chosenAnswerID: string
   chosenWords: string[]
 }
+
+export interface PreparedTypeAnswerInput {
+  taskHTMLContent: string | TrustedHTML
+  taskCorrectAnswerWords: { [x: string]: string[] }
+  typingWords: { [x: string]: string }
+}

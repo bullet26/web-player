@@ -15,3 +15,7 @@ export interface TrueOrFalseTaskText {
 export interface TrueOrFalseTask extends Omit<RightAnswerTask, 'taskText'> {
   taskText: TrueOrFalseTaskText[]
 }
+
+export interface PreparedTrueOrFalseTask extends TrueOrFalseItem {
+  userAnswer: boolean | null
+}

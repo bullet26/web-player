@@ -12,12 +12,17 @@ export const onValidText = (status: boolean, withCheck: boolean) => {
   return validateText
 }
 
-export const getColorCell = (withCheck: boolean, validationArray: string[], itemId: string) => {
+export const getColorCell = (
+  withCheck: boolean,
+  validationArray: string[],
+  itemId: string,
+  status: boolean = true,
+) => {
   let style: CSSProperties = {}
 
   if (!withCheck) {
     style = { background: '#FDF8E6', border: '1px solid #FFCC00' }
-  } else if (withCheck && validationArray.includes(itemId)) {
+  } else if ((withCheck && validationArray.includes(itemId)) || (withCheck && !status)) {
     style = { background: '#FEE8E9', border: '1px solid #EC2028' }
   } else if (withCheck) {
     style = { background: '#ECFFEE', border: '1px solid #00F418' }

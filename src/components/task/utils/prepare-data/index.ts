@@ -6,6 +6,8 @@ import { preparedAnswerFromSelectTask } from './select-task'
 import { preparedRightAnswerTask } from './right-answer-task'
 import { preparedOnlyOneOrTwoRightAnswerTask } from './only-one-right-answer-task'
 import { preparedSortDialogueTask } from './sort-dialogue-task'
+import { preparedTrueOrFalseTask } from './true-or-false-task'
+import { preparedTypeAnswerTask } from './type-answer-task'
 
 export const preparedTaskData = (
   type: Type,
@@ -39,6 +41,12 @@ export const preparedTaskData = (
   }
   if (type === 'sortDialogue') {
     return preparedSortDialogueTask(currentData, randomPlacement)
+  }
+  if (type === 'trueOrFalseTask') {
+    return preparedTrueOrFalseTask(currentData)
+  }
+  if (type === 'typeAnswerTask') {
+    return preparedTypeAnswerTask(currentData)
   }
   return null
 }
