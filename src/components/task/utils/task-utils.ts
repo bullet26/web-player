@@ -45,12 +45,17 @@ export const getColorText = (withCheck: boolean, validationArray: string[], item
   return style
 }
 
-export const getColorBorder = (withCheck: boolean, validationArray: string[], itemId: string) => {
+export const getColorBorder = (
+  withCheck: boolean,
+  validationArray: string[],
+  itemId: string,
+  status: boolean = true,
+) => {
   let style: CSSProperties = {}
 
   if (!withCheck) {
     style = { border: '1px solid #FFCC00' }
-  } else if (withCheck && validationArray.includes(itemId)) {
+  } else if ((withCheck && validationArray.includes(itemId)) || (withCheck && !status)) {
     style = { border: '1px solid #EC2028' }
   } else if (withCheck) {
     style = { border: '1px solid #00F418' }

@@ -5,8 +5,8 @@ import { Button, Divider } from 'antd'
 import { PreparedSplitSentenceTask } from 'types'
 import { ButtonBlock } from 'components/task/elements'
 import { getColorBorder, onValidText, useTaskContext } from 'components/task/utils'
-import s from './SplitSentenceTask.module.scss'
 import { onValidateTask } from './utils'
+import s from './SplitSentenceTask.module.scss'
 
 interface SplitSentenceTaskProps {
   onRepeat: () => void

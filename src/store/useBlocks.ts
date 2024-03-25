@@ -1000,6 +1000,35 @@ const temporaryData = {
           },
           savedInLibrary: false,
         },
+        {
+          id: 'omsLTyYbhCpVrXEbwLUVO',
+          type: 'correctMistakesTask',
+          taskData: {
+            title: 'correct centence',
+            description: '44 ddddd 3333 correct cypkb, v/ gvm b8,iipo',
+            taskText: [
+              {
+                difficultyLevel: 'easy',
+                wrongSentence: "If you use the map, we wouldn't got lost",
+                correctSentence: "If you had used the map, we wouldn't have got lost",
+              },
+              {
+                difficultyLevel: 'middle',
+                correctSentence:
+                  "What would you do if you found a lot of money in the street\nI wouldn't drink that milk if I were you.\n",
+                wrongSentence:
+                  "What would you do if you find a lot of money in the street\nI wouldn't drink that milk if I will be you.\n",
+              },
+              {
+                difficultyLevel: 'hard',
+                correctSentence: "She'll miss the bus if she doesn't leave soon.",
+                wrongSentence: "She'll miss the bus if she don`t leave soon.",
+              },
+            ],
+            parameters: ['withCheck', 'passAgain'],
+          },
+          savedInLibrary: false,
+        },
       ],
     },
   ],

@@ -9,3 +9,9 @@ export interface CorrectMistakesText {
 export interface CorrectMistakesTask extends Omit<RightAnswerTask, 'taskText'> {
   taskText: CorrectMistakesText[]
 }
+
+export interface PreparedCorrectMistakesTask {
+  wrongSentence: string
+  compareSentence: string
+  correctSentence: string
+}

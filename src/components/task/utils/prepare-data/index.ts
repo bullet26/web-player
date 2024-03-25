@@ -8,6 +8,7 @@ import { preparedOnlyOneOrTwoRightAnswerTask } from './only-one-right-answer-tas
 import { preparedSortDialogueTask } from './sort-dialogue-task'
 import { preparedTrueOrFalseTask } from './true-or-false-task'
 import { preparedTypeAnswerTask } from './type-answer-task'
+import { preparedCorrectMistakesTask } from './correct-mistakes-task'
 
 export const preparedTaskData = (
   type: Type,
@@ -47,6 +48,9 @@ export const preparedTaskData = (
   }
   if (type === 'typeAnswerTask') {
     return preparedTypeAnswerTask(currentData)
+  }
+  if (type === 'correctMistakesTask') {
+    return preparedCorrectMistakesTask(currentData)
   }
   return null
 }

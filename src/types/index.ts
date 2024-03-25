@@ -58,6 +58,10 @@ export {
   type PreparedTrueOrFalseTask,
 } from './true-or-false-task'
 
-export { type CorrectMistakesText, type CorrectMistakesTask } from './correct-mistakes-task'
+export {
+  type CorrectMistakesText,
+  type CorrectMistakesTask,
+  type PreparedCorrectMistakesTask,
+} from './correct-mistakes-task'
 
 export { DnDItemTypes } from './DnDTypes'

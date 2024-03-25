@@ -12,6 +12,7 @@ import {
   SortDialogueTask,
   TrueOrFalseTask,
   TypeAnswerTask,
+  CorrectMistakesTask,
 } from 'components/task/tasks'
 
 interface TaskChooseBlockProps {
@@ -49,6 +50,7 @@ export const TaskChooseBlock: FC<TaskChooseBlockProps> = (props) => {
       {type === 'sortDialogue' && <SortDialogueTask onRepeat={onRepeatTask} />}
       {type === 'trueOrFalseTask' && <TrueOrFalseTask onRepeat={onRepeatTask} />}
       {type === 'typeAnswerTask' && <TypeAnswerTask onRepeat={onRepeatTask} />}
+      {type === 'correctMistakesTask' && <CorrectMistakesTask onRepeat={onRepeatTask} />}
     </div>
   )
 }
