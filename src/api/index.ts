@@ -1,30 +1,37 @@
 import ky from 'ky'
-import { LessonType } from 'types'
+import { LessonType, LessonFromAPIType } from 'types'
+import { preparedDataAfterGETRequest } from './utils'
 
 const baseURL = import.meta.env.VITE_API_BASE_URL
-const accessToken = localStorage.getItem('token')
-const $request = ky.create({
-  prefixUrl: `${baseURL}/api`,
-  headers: {
-    Authorization: `Bearer ${accessToken}`,
-  },
-  credentials: 'include',
-  hooks: {
-    beforeRetry: [
-      // eslint-disable-next-line consistent-return
-      async ({ request, options, error, retryCount }) => {
-        if (retryCount > 2) {
-          return ky.stop
-        }
-      },
-    ],
-  },
-})
 
-export const getBlocks = async (state: string = ''): Promise<LessonType> => {
+const $request = (accessToken: string) => {
+  return ky.create({
+    prefixUrl: `${baseURL}/api`,
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
+    hooks: {
+      beforeRetry: [
+        // eslint-disable-next-line consistent-return
+        async ({ request, options, error, retryCount }) => {
+          if (retryCount > 2) {
+            return ky.stop
+          }
+        },
+      ],
+    },
+  })
+}
+
+export const getLessonByVersionId = async (
+  accessToken: string,
+  versionId: string,
+): Promise<LessonType> => {
   try {
-    const res: LessonType = await $request.get(`lessons/${state}`).json()
-    return res
+    const res: LessonFromAPIType = await $request(accessToken)
+      .get(`lessons/versions/${versionId}`)
+      .json()
+    return preparedDataAfterGETRequest(res)
   } catch (error: any) {
     if (error?.name === 'HTTPError') {
       const { message } = await error.response.json()

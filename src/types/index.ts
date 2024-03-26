@@ -1,4 +1,4 @@
-export { type ChapterType, type LessonType } from './lesson-type'
+export { type ChapterType, type LessonType, type LessonFromAPIType } from './lesson-type'
 
 export {
   types,
@@ -10,6 +10,7 @@ export {
   type DataTypeItemTask,
   type TaskTypeOneItem,
   type PreparedTask,
+  type BlockTYPE,
 } from './block-data-type'
 
 export {

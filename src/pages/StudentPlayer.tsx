@@ -18,7 +18,11 @@ export const StudentPlayer: FC = () => {
         <ChapterPanel />
       </div>
       <div style={{ maxWidth: `${width}px`, marginLeft: `${chapterWidth}px` }}>
-        {selectedChapterID && <ViewModeContent />}
+        {selectedChapterID ? (
+          <ViewModeContent />
+        ) : (
+          <div className={s.largeText}>Оберіть розділ уроку</div>
+        )}
       </div>
       <div className={s.dictionaryWrapper}>
         <Dictionary />

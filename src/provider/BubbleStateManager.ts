@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 type StateListenerType<T> = (state: T, eventMeta?: any) => void
 
 // This state manager has to implement the Observer pattern and, therefore, should have a list of observers (listeners)

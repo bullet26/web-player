@@ -77,14 +77,17 @@ export type PreparedTask =
   | PreparedTypeAnswerInput
   | PreparedCorrectMistakesTask
 
+export type BlockTYPE = 'NON_INTERACTIVE' | 'INTERACTIVE'
+
 export type DataTypeItem = {
   text?: string
+  blockType: BlockTYPE
   type: Type
   savedInLibrary: boolean
   id: string
   url?: string
   taskData?: TaskType
-  tableColumns?: Omit<DataTypeItem, 'savedInLibrary'>[]
+  tableColumns?: Omit<DataTypeItem, 'savedInLibrary' | 'blockType'>[]
   imageCaption?: string
 }
 
