@@ -1,23 +1,34 @@
-import { FC } from 'react'
-import { Button } from 'antd'
+import { FC, useState } from 'react'
+import { Button, Divider } from 'antd'
+import { AddWordModal, WordListItem } from './elements'
 import s from './Dictionary.module.scss'
 
 export const Dictionary: FC = () => {
+  const [modalStatus, setModalStatus] = useState(false)
+
   return (
-    <div className={s.wrapper}>
-      <div className={s.item}>
-        <div className={s.title}>Слова уроку</div>
-        <div className={s.divider} />
-      </div>
-      <div className={s.item}>
+    <>
+      <div className={s.wrapper}>
         <div className={s.buttonWrapper}>
-          <div className={s.title}>Свої слова</div>
-          <Button shape="circle" type="primary" style={{ width: '24px' }}>
+          <div className={s.title}>Слова уроку</div>
+        </div>
+        <Divider className={s.dividerMain} />
+        <WordListItem word="hi" transcription="[haɪ]" translation="Приві́т" />
+        <div className={s.buttonWrapper}>
+          <div className={s.title}>Слова уроку</div>
+          <Button
+            shape="circle"
+            type="primary"
+            style={{ width: '24px' }}
+            onClick={() => setModalStatus(true)}>
             +
           </Button>
         </div>
-        <div className={s.divider} />
+        <Divider className={s.dividerMain} />
+        <WordListItem word="hi" transcription="[haɪ]" translation="Приві́т" />
       </div>
-    </div>
+
+      <AddWordModal isModalOpen={modalStatus} closeModal={() => setModalStatus(false)} />
+    </>
   )
 }
