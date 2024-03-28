@@ -21,6 +21,7 @@ declare global {
 export type ComponentStateType = typeof initState
 
 const stateManager = new BubbleStateManager(initState)
+console.log('mode:', mode)
 
 if (mode === 'production') {
   window.initPlugin = (id: string) => {

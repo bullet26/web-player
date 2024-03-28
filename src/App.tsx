@@ -18,7 +18,7 @@ export const App: FC = () => {
   }, [])
 
   console.log('value from Bubble State Manager:', state.value)
-  // console.log('apiKey from Bubble State Manager:', state.apiKey)
+  console.log('apiKey from Bubble State Manager:', state.apiKey)
   console.log('versionId from Bubble State Manager:', state.versionId)
 
   return (
